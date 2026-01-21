@@ -1,0 +1,20 @@
+1) Visibility 
+    non-static : RESTRICTED TO A FUNCTION 
+    static : RESTRICTED TO A FUNCTION  
+
+2) Time of allocation 
+    non-static : DYNAMIC (AFTER FUNCTION IS CALLED )
+    static : STATIC (AT THE TIME OF BUILDING EXE )
+
+3) Frequency of allocation 
+    non-static : PER FUNCTION CALL 
+    static : ONCE 
+
+4) Lifetime
+    non-static: = LIFE TIME OF FUNCITON CALL 
+    static: = LIFE TIME OF PROCESS ( APPLICTION / PROGRAM )
+
+5) Storage location 
+    non-static : STACK FRAME OF CALLED FUNCTION (ON STACK OF THE CALLING THREAD )
+    static : ONE OF THE STATIC SECTIONS SUCH AS DATA OR BSS 
+#-------------------------------
