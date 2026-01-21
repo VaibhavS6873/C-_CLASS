@@ -1,0 +1,94 @@
+01) depends-on relationship 
+    class C2 depends on class C1. 
+
+    if any member function of class C2, 
+    creates an object of class C1 and uses 
+    the object for the purpose of definition 
+    (and in all probability the object gets 
+    destroyed or deleted while returning from 
+    member function). 
+
+    class C1 
+    {
+        private: 
+            // some data 
+        public: 
+            C1(some data)
+            {
+                some lines 
+            }
+
+            // some member functions 
+    }; 
+
+    class C2 
+    {
+        private: 
+            // some data 
+
+        public: 
+            void member_function(parameters)
+            {
+                C1 objC1(initialization_data); 
+
+                objC1.some_function(); //etc 
+            }
+    }; 
+
+    C2 depends-on C1. 
+
+02) has-a relationship 
+    class C2 has a class C1 
+    if object of class C2 has an object of class C1 
+    as one of its members.
+    (at code level, one of the non-static data definition 
+    statement in C2 has data type C1)
+
+    class C1 
+    {
+        private: 
+            // some data 
+        public: 
+            C1(some data)
+            {
+                some lines 
+            }
+
+            // some member functions 
+    }; 
+
+    class C2 
+    {
+        private: 
+            int data_member_1; 
+            float data_member_2; 
+            std::string data_member_3; 
+            C1 data_member_4; 
+            // etc 
+    }; 
+
+    class C2 has-a C1 
+    class C2 has-a int 
+    class C2 has-a float 
+    class C2 has-a std::string 
+    
+    // alternatively 
+    class C2 
+    {
+        private: 
+            int data_member_1; 
+            float data_member_2; 
+            std::string data_member_3; 
+            C1* pC1; 
+        public: 
+            C2() : pC1(new C1(initialization_data))
+            {
+
+            }
+            // this also counts in has-a relationship 
+    }; 
+
+03) class C2 is-a class C1 (and something more)
+    
+
+04) class C2 implements class C1 
