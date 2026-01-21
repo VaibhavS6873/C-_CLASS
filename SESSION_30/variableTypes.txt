@@ -1,0 +1,7 @@
+// instance variable 
+int n; 
+struct Date myDate; 
+
+// pointer variable 
+int* p; 
+struct Date* pDate; 
