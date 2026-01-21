@@ -1,0 +1,77 @@
+Let T be a user defined data type. 
+(class T is implement)
+
+C++ client programmers desire two features for objects of any class T. 
+
+1) Ability to initialize new object of class T by its existing object. 
+2) Ability to assign one existing object of class by another. 
+
+T obj1(initialization_data); // parameterized or default constructor
+
+T obj2(obj1); // initialize obj2 by obj1 
+
+T obj3(initialization_data); // parameterized or default constructor
+
+obj3 = obj1; // assigning obj3 by obj1 
+
+We expect a simple memberwise transfer of values. 
+
+T obj2(obj1); // initialize obj2 by obj1 
+
+obj2.mem1 = obj1.mem1; 
+obj2.mem2 = obj1.mem2;
+obj2.mem3 = obj1.mem3;
+.
+.
+.
+obj2.memN = obj1.memN;
+
+OR simply 
+
+memcpy(&obj2, &obj1, sizeof(T)); 
+
+and same for 
+
+obj3 = obj1; 
+
+memcpy(&obj3, &obj1, sizeof(T)); 
+
+Assuming that no built in support for these client 
+side behaviour, they can always be supported explicitly. 
+
+How? 
+
+class T 
+{
+    public: 
+        // new object to be initialized 
+        // is capture in implicit this pointer 
+        T(const T& existingObject)
+        {
+            // memberwise copying or memcpy() 
+            // can be implemented 
+        }
+
+        // Object on left side of assignmet operator 
+        // is capture in this pointer
+        void operator=(const T& rhsObject)
+        {
+            // memberwise copying or memcpy() 
+            // can be implemented 
+        }
+
+      
+}; 
+
+T obj2(obj1); 
+== 
+T::T(&obj2, obj1); 
+
+obj3 = obj1; 
+==
+T::operator=(&obj3, obj1)
+
+class T 
+{
+
+}; 
