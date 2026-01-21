@@ -1,0 +1,21 @@
+CPA_int X(10); 
+
+void test(void)
+{
+    ++X; // CPA_int::operator++(&X); 
+    X++;  
+}
+
+class CPA_int {
+    operator++()
+    {
+        // implementing meaning 
+    }
+
+    operator++(int)
+    {
+        // implementing meaning 
+    }
+}; 
+
+// PRAGMATIC
