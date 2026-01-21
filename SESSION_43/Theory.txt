@@ -1,0 +1,45 @@
+Why is C++ making an exception to the rule of 
+'identical types fpr pointer and pointee' in case 
+classes are related in 'is-a' relationship? 
+
+Conceptual Answer: 
+C2 is-a C1 
+
+C1* pC = new C1; 
+C1* pC1 = new C2; 
+
+#---------------------------------------------------------------
+
+pC2->C1::f(); 
+
+class Square : public Quadrilateral {}; 
+
+Quadrilateral* pQ = new Square; 
+
+Square S; 
+
+S.perimeter(); 
+
+Quadrilateral::perimeter(&S); 
+
+#-----------------------------------------------------------------
+
+T1 *pT1 = new T2; 
+
+#--------------------------------------------------------
+
+object.function(apl); 
+
+DHYAS
+
+className::function(&object, apl); 
+#-----------------------------------------------------------------
+
+Base* pB = new Derived; 
+
+pB->inherited_function(); 
+#-------------------------------------
+pB->overidden_function(); virtual 
+#---------------------------------------
+pB->derived_specific_function(); dynamic_cast
+#----------------------------------------
