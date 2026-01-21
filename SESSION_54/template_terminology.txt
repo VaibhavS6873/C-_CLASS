@@ -1,0 +1,12 @@
+Template parameter list can be created as follows: 
+template <parameter(s)>
+
+IN order to create a generic algorithm/container type, one must create 
+a function template/class template . Function template / class template  
+can be implemented by creating approporate template parameter list using 
+aforementioned syntax followed by a function definition / class definition. 
+//--------------------------------------------------------------------------
+Each parameter in template parameter list can be one of the following types: 
+1) template non-type parameter 
+2) template type-parameter 
+3) template-template parameter 
