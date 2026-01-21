@@ -1,0 +1,69 @@
+Types of constructor. 
+01) We can write more than one constructor in a class -> thanks to C++ support 
+    for function overloading -> thanks to name mangling ability. 
+02) Why? It provides multiple options for initialization 
+    Date myDate1(27, 4, 2025); 
+    Date myDate2("27/04/2025"); 
+
+    class Date 
+    {
+        public: 
+            Date(int dd, int mm, int yy)
+            {
+
+            }
+            
+            Date(const char* dateStr)
+            {
+
+            } 
+    }; 
+
+03) Types of constructor: 
+        CATEGORY 1
+        default constructor 
+        parameterized constructor 
+
+        CATEGORY 2 
+        copy constructor 
+
+        CATEGORY 3 
+        move constructor 
+
+
+        Default constructor:
+
+        A constructor DEFINED BY PROGRAMMER WHICH DOES NOT HAVE 
+        ANY EXPLICIT FORMAL PARAMETER IS CALLED AS A DEFAULT CONSTRUCTOR 
+
+        class C 
+        {
+            public: 
+    
+                C()
+                {
+                    // Body may be empty or 
+                    // it may contain any length of code 
+                }
+        }
+
+        Parameterized constructor: 
+            If a constructor has at least one explicit, non-default formal parameter 
+            then it is called as a parameterized constructor 
+
+        class Date 
+        {
+            public: 
+                Date(int dd=1, int mm=1, int yy=1970) : day(dd), month(mm), year(yy){} 
+        }; 
+
+        Date myDate; 
+
+        Synthesized default constructor: 
+        Synthesized = artificially created 
+
+        class Date 
+        {
+            public: 
+                
+        };
