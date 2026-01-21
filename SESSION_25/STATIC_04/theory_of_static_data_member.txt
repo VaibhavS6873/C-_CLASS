@@ -1,0 +1,23 @@
+1) Visibility:
+    non-static data member: can be accessed through non-static functions 
+                            inside class 
+    static data member: can be accessed through static/non-static function 
+                        of a class 
+                        [Wait until explanation of Case 5 of static] 
+
+2) Time of allocation: 
+    non-static : time of allocation = time of allocation of object 
+    static: time of allocation = static (at the time of building exe)
+
+3) Frequency of allocation: 
+    non-static: per object 
+    static: ONCE 
+
+4) Lifetime 
+    non-static = lifetime of object of which it is a member 
+    static = lifetime of process/application/program 
+
+5) Storage section
+    non-static: = storage section of object 
+    static := one of the static sections such as data/bss 
+                (details left to compiler)
